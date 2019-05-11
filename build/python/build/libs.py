@@ -3,9 +3,9 @@ from build.autotools import AutotoolsProject
 from build.freetype import FreeTypeProject
 
 glibc = AutotoolsProject(
-    'http://mirror.netcologne.de/gnu/libc/glibc-2.23.tar.xz',
+    'https://github.com/nico-krais/glibc/raw/master/glibc-2.23.tar.xz',
     'http://ftp.gnu.org/gnu/glibc/glibc-2.23.tar.xz',
-    '456995968f3acadbed39f5eba31678df',
+    'e2dfb3e650ddfff8052c8259aabb3d59',        
     'include/unistd.h',
     [
         '--enable-kernel=2.6.35',
@@ -39,9 +39,9 @@ freetype = FreeTypeProject(
 )
 
 curl = AutotoolsProject(
-    'http://curl.haxx.se/download/curl-7.55.1.tar.xz',
-    'https://github.com/curl/curl/releases/download/curl-7_55_1/curl-7.55.1.tar.bz2',
-    '3eafca6e84ecb4af5f35795dee84e643d5428287e88c041122bb8dac18676bb7',
+    'http://curl.haxx.se/download/curl-7.61.0.tar.xz',
+    'https://github.com/curl/curl/releases/download/curl-7_61_0/curl-7.61.0.tar.xz',
+    'ef6e55192d04713673b4409ccbcb4cb6cd723137d6e10ca45b0c593a454e1720',
     'lib/libcurl.a',
     [
         '--disable-shared', '--enable-static',
@@ -63,9 +63,9 @@ curl = AutotoolsProject(
 )
 
 libpng = AutotoolsProject(
-    'ftp://ftp.simplesystems.org/pub/libpng/png/src/libpng16/libpng-1.6.32.tar.xz',
-    'http://downloads.sourceforge.net/project/libpng/libpng16/1.6.32/libpng-1.6.32.tar.xz',
-    'c918c3113de74a692f0a1526ce881dc26067763eb3915c57ef3a0f7b6886f59b',
+    'ftp://ftp.simplesystems.org/pub/libpng/png/src/libpng16/libpng-1.6.34.tar.xz',
+    'http://downloads.sourceforge.net/project/libpng/libpng16/1.6.34/libpng-1.6.34.tar.xz',
+    '2f1e960d92ce3b3abd03d06dfec9637dfbd22febf107a536b44f7a47c60659f6',
     'lib/libpng.a',
     [
         '--disable-shared', '--enable-static',
