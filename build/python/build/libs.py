@@ -3,9 +3,9 @@ from build.autotools import AutotoolsProject
 from build.freetype import FreeTypeProject
 
 glibc = AutotoolsProject(
-    'http://mirror.netcologne.de/gnu/libc/glibc-2.23.tar.xz',
+    'https://github.com/nico-krais/glibc/raw/master/glibc-2.23.tar.xz',
     'http://ftp.gnu.org/gnu/glibc/glibc-2.23.tar.xz',
-    '456995968f3acadbed39f5eba31678df',
+    'e2dfb3e650ddfff8052c8259aabb3d59',        
     'include/unistd.h',
     [
         '--enable-kernel=2.6.35',
