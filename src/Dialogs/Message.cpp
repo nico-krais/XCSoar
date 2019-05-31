@@ -162,8 +162,8 @@ ShowMessageBoxSmall(const TCHAR *text, const TCHAR *caption, unsigned flags)
 
   SingleWindow &main_window = UIGlobals::GetMainWindow();
 
-  const unsigned dialog_width = Layout::Scale(200u);
-  unsigned dialog_height = Layout::Scale(160u);
+  const unsigned dialog_width = Layout::Scale(100u);
+  unsigned dialog_height = Layout::Scale(80u);
 
   const unsigned button_width = Layout::Scale(15u);
   const unsigned button_height = Layout::Scale(10u);
@@ -198,7 +198,7 @@ ShowMessageBoxSmall(const TCHAR *text, const TCHAR *caption, unsigned flags)
 
   dialog_height = wf.GetTitleHeight() + Layout::Scale(10) + text_height + button_height;
   const int dialog_x = (root_size.cx - dialog_width) / 2;
-  const int dialog_y = (root_size.cy - dialog_height) / 2;
+  const int dialog_y = (root_size.cy - dialog_height)*0.05;
   wf.Move(dialog_x, dialog_y, dialog_width, dialog_height);
 
   PixelRect button_rc;
@@ -213,46 +213,10 @@ ShowMessageBoxSmall(const TCHAR *text, const TCHAR *caption, unsigned flags)
 
   StaticArray<Button *, 10> buttons;
 
-  unsigned button_flags = flags & 0x000f;
-  if (button_flags == MB_OK ||
-      button_flags == MB_OKCANCEL)
-    buttons.append() =
-      new Button(client_area, dialog_look.button, _("OK"), button_rc,
-                 button_style, wf, IDOK);
+  buttons.append() =
+    new Button(client_area, dialog_look.button, _("OK"), button_rc,
+               button_style, wf, IDOK);
 
-  if (button_flags == MB_YESNO ||
-      button_flags == MB_YESNOCANCEL) {
-    buttons.append() =
-      new Button(client_area, dialog_look.button, _("Yes"), button_rc,
-                 button_style, wf, IDYES);
-
-    buttons.append() =
-      new Button(client_area, dialog_look.button, _("No"), button_rc,
-                 button_style, wf, IDNO);
-  }
-
-  if (button_flags == MB_ABORTRETRYIGNORE ||
-      button_flags == MB_RETRYCANCEL)
-    buttons.append() =
-      new Button(client_area, dialog_look.button, _("Retry"), button_rc,
-                 button_style, wf, IDRETRY);
-
-  if (button_flags == MB_OKCANCEL ||
-      button_flags == MB_RETRYCANCEL ||
-      button_flags == MB_YESNOCANCEL)
-    buttons.append() =
-      new Button(client_area, dialog_look.button, _("Cancel"), button_rc,
-                 button_style, wf, IDCANCEL);
-
-  if (button_flags == MB_ABORTRETRYIGNORE) {
-    buttons.append() =
-      new Button(client_area, dialog_look.button, _("Abort"), button_rc,
-                 button_style, wf, IDABORT);
-
-    buttons.append() =
-      new Button(client_area, dialog_look.button, _("Ignore"), button_rc,
-                 button_style, wf, IDIGNORE);
-  }
 
   const unsigned max_button_width = dialog_width / buttons.size();
   int button_x = max_button_width / 2 - button_width / 2;
