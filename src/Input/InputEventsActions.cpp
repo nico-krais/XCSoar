@@ -60,6 +60,7 @@ doc/html/advanced/input/ALL		http://xcsoar.sourceforge.net/advanced/input/
 #include "Dialogs/ProfileListDialog.hpp"
 #include "Dialogs/dlgAnalysis.hpp"
 #include "Dialogs/FileManager.hpp"
+#include "Dialogs/Message.hpp"
 #include "Dialogs/ReplayDialog.hpp"
 #include "Message.hpp"
 #include "Markers/Markers.hpp"
@@ -348,6 +349,14 @@ void
 InputEvents::eventWaypointEditor(const TCHAR *misc)
 {
   dlgConfigWaypointsShowModal();
+}
+
+// Lock the screen
+void
+InputEvents::eventScreenLock(const TCHAR *misc)
+{
+  ShowMessageBox(_("Press OK to unlock screen"), _("SCREEN LOCK"),
+                MB_OK | MB_ICONINFORMATION);
 }
 
 // StatusMessage
