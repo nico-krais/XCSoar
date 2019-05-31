@@ -65,5 +65,7 @@ enum {
  */
 int
 ShowMessageBox(const TCHAR *text, const TCHAR *caption, unsigned flags);
+int
+ShowMessageBoxSmall(const TCHAR *text, const TCHAR *caption, unsigned flags);
 
 #endif
