@@ -433,7 +433,7 @@ mode=Display1
 type=key
 data=APP2
 event=Mode Display2
-label=Display\n1/2
+label=Display\n1/3
 location=2
 
 
@@ -480,8 +480,8 @@ location=9
 mode=Display2
 type=key
 data=APP2
-event=Mode default
-label=Display\n2/2
+event=Mode Display3
+label=Display\n2/3
 location=2
 
 mode=Display2
@@ -520,6 +520,24 @@ data=0
 event=AirSpace toggle
 label=Airspace\n$(AirspaceToggleActionName)
 location=9
+
+# -------------
+# mode=Display3
+# -------------
+
+mode=Display3
+type=key
+data=APP2
+event=Mode default
+label=Display\n3/3
+location=2
+
+mode=Display3
+type=key
+data=6
+event=ScreenLock
+label=Screen\nlock
+location=5
 
 # -------------
 # mode=Config1
