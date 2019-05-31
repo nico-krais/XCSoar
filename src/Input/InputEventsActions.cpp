@@ -355,7 +355,7 @@ InputEvents::eventWaypointEditor(const TCHAR *misc)
 void
 InputEvents::eventScreenLock(const TCHAR *misc)
 {
-  ShowMessageBox(_("Press OK to unlock screen"), _("SCREEN LOCK"),
+  ShowMessageBoxSmall(_("Press OK to unlock screen"), _("SCREEN LOCK"),
                 MB_OK | MB_ICONINFORMATION);
 }
 
