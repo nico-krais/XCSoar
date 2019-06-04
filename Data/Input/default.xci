@@ -536,6 +536,7 @@ mode=Display3
 type=key
 data=6
 event=ScreenLock
+event=Mode default
 label=Screen\nlock
 location=5
 
