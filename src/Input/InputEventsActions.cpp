@@ -61,6 +61,7 @@ doc/html/advanced/input/ALL		http://xcsoar.sourceforge.net/advanced/input/
 #include "Dialogs/dlgAnalysis.hpp"
 #include "Dialogs/FileManager.hpp"
 #include "Dialogs/Message.hpp"
+#include "Dialogs/ScreenLock.hpp"
 #include "Dialogs/ReplayDialog.hpp"
 #include "Message.hpp"
 #include "Markers/Markers.hpp"
@@ -355,8 +356,7 @@ InputEvents::eventWaypointEditor(const TCHAR *misc)
 void
 InputEvents::eventScreenLock(const TCHAR *misc)
 {
-  ShowMessageBoxSmall(_("Press OK to unlock screen"), _("SCREEN LOCK"),
-                MB_OK | MB_ICONINFORMATION);
+  ShowScreenLock();
 }
 
 // StatusMessage

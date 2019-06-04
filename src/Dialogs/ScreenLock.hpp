@@ -21,49 +21,15 @@ Copyright_License {
 }
 */
 
-#ifndef XCSOAR_DIALOGS_MESSAGE_HPP
-#define XCSOAR_DIALOGS_MESSAGE_HPP
-
-#include <tchar.h>
-
-#ifdef WIN32
-#include <windows.h>
-#else
-
-enum {
-  IDCANCEL = 3,
-  IDOK,
-  IDYES,
-  IDNO,
-  IDRETRY,
-  IDABORT,
-  IDIGNORE,
-};
-
-enum {
-  MB_OKCANCEL,
-  MB_OK,
-  MB_YESNO,
-  MB_YESNOCANCEL,
-  MB_RETRYCANCEL,
-  MB_ABORTRETRYIGNORE,
-  MB_ICONINFORMATION = 0x10,
-  MB_ICONWARNING = 0x20,
-  MB_ICONEXCLAMATION = 0x40,
-  MB_ICONQUESTION = 0x80,
-  MB_ICONERROR = 0x100,
-};
-
-#endif
+#ifndef XCSOAR_DIALOGS_SCREEN_LOCK_HPP
+#define XCSOAR_DIALOGS_SCREEN_LOCK_HPP
 
 /**
- * Displays a MessageBox and returns the pressed button
- * @param lpText Text displayed inside the MessageBox
- * @param lpCaption Text displayed in the Caption of the MessageBox
- * @param uType Type of MessageBox to display (OK+Cancel, Yes+No, etc.)
- * @return
+ * Show a lock screen message, based on a WndForm. The dialog is very
+ * small and placed on the top of the screen. Only an "OK" button is shown,
+ * if pressed the user is returned to normal operation.
  */
-int
-ShowMessageBox(const TCHAR *text, const TCHAR *caption, unsigned flags);
+void
+ShowScreenLock();
 
 #endif
