@@ -41,8 +41,8 @@ ShowScreenLock()
 
   SingleWindow &main_window = UIGlobals::GetMainWindow();
 
-  const unsigned dialog_width = Layout::Scale(100u);
-  unsigned dialog_height = Layout::Scale(80u);
+  const unsigned dialog_width = Layout::Scale(50u);
+  unsigned dialog_height = Layout::Scale(60u);
 
   const unsigned button_width = Layout::Scale(15u);
   const unsigned button_height = Layout::Scale(10u);
@@ -60,15 +60,14 @@ ShowScreenLock()
   form_rc.right = dialog_width;
   form_rc.bottom = dialog_height;
 
-  const TCHAR *caption = "SCREEN LOCK";
-  WndForm wf(main_window, dialog_look, form_rc, caption, style);
+  WndForm wf(main_window, dialog_look, form_rc, "", style);
 
   ContainerWindow &client_area = wf.GetClientAreaWindow();
 
   // Create text element
   WndFrame *text_frame = new WndFrame(client_area, dialog_look, form_rc);
 
-  const TCHAR *text = "Press OK to unlock screen";
+  const TCHAR *text = "Unlock screen";
   text_frame->SetCaption(text);
   text_frame->SetAlignCenter();
 
